@@ -1,0 +1,2 @@
+This folder contains include files which were not written at the Sanger Institute or as part of the Swift project. They are licensed under the GPL or LGPL.
+Currently this does not include GSL or GSLMM which are included in their own folders

@@ -1,0 +1,2 @@
+all:
+	g++ testmain.cpp test_imageanalysis.cpp test_channeloffsets.cpp test_crosschannelregistration.cpp test_channelregistration.cpp test_segmentation.cpp test_lowercomplete.cpp test_runlengthencode.cpp test_watershed.cpp test_localmaxima.cpp test_euclideandistancemap.cpp test_swiftimage.cpp test_nwthreshold.cpp test_adaptivethreshold.cpp test_sobeloperator.cpp test_morphologicalopening.cpp test_morphologicalclosing.cpp ../SwiftFFT.cpp -I.. -I../../include -pg -g -ltiff -lfftw3 -o test

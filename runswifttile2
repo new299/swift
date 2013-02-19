@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export lane=$2
+export tile=$3
+
+export randname=$4
+
+ls  $1/Images/L00${lane}/C[2-9].1/s_${lane}_${tile}_a*.tif > a_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+
+ls  $1/Images/L00${lane}/C[2-9].1/s_${lane}_${tile}_c*.tif > c_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+
+ls  $1/Images/L00${lane}/C[2-9].1/s_${lane}_${tile}_g*.tif > g_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+
+ls  $1/Images/L00${lane}/C[2-9].1/s_${lane}_${tile}_t*.tif > t_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+
+echo ./swift --align_every 1 --correlation_subsubimages 1 --background_subtraction_window 12 --textmode --intout intfile --ref ./phi.fa --tag $randname --img-a a_images.$randname --img-c c_images.$randname --img-g g_images.$randname --img-t t_images.$randname --report runreport.$randname --fastq $randname.fastq --fast4 $randname.fast4
+time ./swift --phasing_iterations 3 --load_cycle 10 --align_every 50 --correlation_subsubimages 1 --background_subtraction_window 12 --textmode --intout intfile --ref ./phi.fa --tag $randname --img-a a_images.$randname --img-c c_images.$randname --img-g g_images.$randname --img-t t_images.$randname --report runreport.$randname --fastq $randname.fastq --fast4 $randname.fast4

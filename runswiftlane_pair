@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# $1 is pair1 folder
+# $2 is pair2 folder
+# $3 is lane
+# $4 is the number of tiles per lane
+# $5 is the position to break at (start of second end)
+# $6 is a tag to place in files/filenames.
+
+export pair1=$1
+export pair2=$2
+export lane=$3
+export tilecount=$4
+export breakposition=$5
+export randname=$6
+
+echo ${SWIFTDIR:?"SWIFTDIR is not set, please set SWIFTDIR to your swift installation directory."}
+echo "Using SWIFTDIR: " $SWIFTDIR
+
+for ((i=1; i<=$tilecount; i++))
+do
+  export tile=$i
+  bsub -n 1 -R'select[mem>2048] rusage[mem=2048]' -q normal -o $PWD/$randname\_$lane\_$tile.stdout -e $PWD/$randname\_$lane\_$tile.stderr $SWIFTDIR/runswifttile_pair $pair1 $pair2 $lane $i $breakposition $randname\_$lane\_$tile
+done

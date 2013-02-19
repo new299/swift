@@ -1,0 +1,5 @@
+awk 'BEGIN{n=0}{if(n%4==1) print n " " n " " n " " n " "$0;n++;}' $1 > $1.sol
+sed 's/N/./g' $1.sol > $1.sol1
+~/phageAlign ~/phi_plus_SNPs.fa 37 37 -useBases YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY $1.sol1 | ~/GAPipeline-0.3.0/Gerald/score.pl > $1.seq.phage 
+
+grep "percent error rate" $1.seq.phage

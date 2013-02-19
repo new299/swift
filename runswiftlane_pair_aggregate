@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# $1 is folder containing the results
+# $2 is lane
+
+export sourcefolder=$1
+export lane=$2
+export tag=$3
+
+echo ${SWIFTDIR:?"SWIFTDIR is not set, please set SWIFTDIR to your swift installation directory."}
+echo "Using SWIFTDIR: " $SWIFTDIR
+
+export end1filename=$sourcefolder/$tag\_$lane.end1.pf.fastq
+export end2filename=$sourcefolder/$tag\_$lane.end2.pf.fastq
+
+touch $end1filename
+touch $end2filename
+
+echo "End 1 Concatinated lane fastq: " $end1filename
+echo "End 2 Concatinated lane fastq: " $end2filename
+
+for i in $1/$tag*$lane*.fastq.pf.end1
+do 
+  cat $i >> $end1filename
+done
+
+for i in $1/$tag*$lane*.fastq.pf.end2
+do 
+  cat $i >> $end2filename
+done

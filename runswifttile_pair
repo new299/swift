@@ -1,0 +1,119 @@
+#!/bin/bash
+
+#export GLIBCXX_FORCE_NEW=1
+
+# $1 is pair1 folder
+# $2 is pair2 folder
+# $3 is lane
+# $4 is tile
+# $5 is the position to break at (start of second end)
+# $6 is a tag to place in files/filenames.
+
+echo ${SWIFTDIR:?"SWIFTDIR is not set, please set SWIFTDIR to your swift installation directory."}
+echo "Using SWIFTDIR: " $SWIFTDIR
+
+export lane=$3
+export tile=$4
+export breakposition=$5
+export randname=$6
+
+ls  $1/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_a*.tif > a_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $1/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+
+ls  $2/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+ls  $2/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_a*.tif >> a_images.$randname
+
+
+ls  $1/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_c*.tif > c_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $1/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+
+ls  $2/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+ls  $2/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_c*.tif >> c_images.$randname
+
+
+ls  $1/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_g*.tif > g_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $1/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+
+ls  $2/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+ls  $2/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_g*.tif >> g_images.$randname
+
+
+ls  $1/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_t*.tif > t_images.$randname
+ls  $1/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $1/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+
+ls  $2/Images/L00${lane}/C[1-9].1/s_${lane}_${tile}_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C1?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C2?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C3?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C4?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C5?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C6?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C7?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C8?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C9?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+ls  $2/Images/L00${lane}/C10?.1/s_$[lane]_$[tile]_t*.tif >> t_images.$randname
+
+time $SWIFTDIR/swift --purity_threshold 0.57 --correlation_reference_cycle 0 --correlation_threshold 0.8 --correlation_use_bases -1 --correlation_threshold_window 10 --threshold 0.9 --threshold_window 3 --phasing_iterations 3 --phasing_window 10 --load_cycle 10 --align_every 50 --correlation_subimages 1 --correlation_subsubimages 1 --correlation_cc_subimage_multiplier 15 --background_subtraction_enabled true --background_subtraction_window 5 --segment_cycles 3 --tag $randname --img-a a_images.$randname --img-c c_images.$randname --img-g g_images.$randname --img-t t_images.$randname --report runreport.$randname --fastq fastq.$randname --ref ./phi.fa --discard_offedge false --optical_duplicates_distance 6 --optical_duplicates_mismatches 8 --pair_break $breakposition
