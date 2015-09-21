@@ -153,7 +153,7 @@ void MockImageAnalysis<_prec>::load_default_alignment_transforms(string filename
 }
 
 template<class _prec>
-bool MockImageAnalysis<_prec>::run_image_analysis(int pass=0) {
+bool MockImageAnalysis<_prec>::run_image_analysis(int pass) {
 
   return true; // TODO: return false on failure
 }

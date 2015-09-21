@@ -105,8 +105,8 @@ vector<string> ImageAnalysis<_prec,_threshold_prec>::read_image_list(string imag
 }
 
 template<class _prec,class _threshold_prec>
-bool ImageAnalysis<_prec,_threshold_prec>::load_images(int load_first    =10,
-                                                       bool get_reference=false
+bool ImageAnalysis<_prec,_threshold_prec>::load_images(int load_first    ,
+                                                       bool get_reference
                                                       ) {
   // Clear out old images
   for(size_t n=0;n<images.size();n++) {

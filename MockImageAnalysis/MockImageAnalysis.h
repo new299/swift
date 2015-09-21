@@ -97,7 +97,7 @@ public:
 
   void inline initialise();                 ///< Initialise this object, called by constructor
 
-  bool run_image_analysis(int pass); ///< Runs the image analysis
+  bool run_image_analysis(int pass=0); ///< Runs the image analysis
 
   inline const vector<Cluster<_prec> > &generate();              ///< Runs image analysis and returns a vector of clusters single pass analysis
   inline const vector<Cluster<_prec> > &generate_1pass();        ///< Runs image analysis and returns a vector of clusters single pass analysis

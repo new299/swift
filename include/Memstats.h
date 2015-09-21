@@ -25,6 +25,7 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <unistd.h>
 #include "stringify.h"
 #include "Timetagger.h"
 

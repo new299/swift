@@ -149,7 +149,7 @@ private:
   void                         generate_additional(vector<Cluster<_prec> > &clusters, vector<SwiftImageCluster<_prec> > &image_clusters);
 
 
-  bool load_images(int load_first,bool grab_reference);                                             ///< Loads images into the images vector
+  bool load_images(int load_first=10,bool grab_reference=false);                                             ///< Loads images into the images vector
   vector<string> read_image_list(string image_filelist_filename); ///< loads a file containing filelists and returns it as a string
   
   int total_cycles;                           ///< total number of cycles, populated by load_images
