@@ -20,7 +20,7 @@ IFILES = -I./Filters -I./SmallAlign -I./MockImageAnalysis -I./BaseCaller \
 LFILES       = -L /software/solexa/lib -lgsl -lgslcblas -lfftw3f -ltiff
 SWIFT_LFILES = -L /software/solexa/lib -lgsl -lgslcblas -lfftw3 -ltiff
 
-CPPFLAGS = $(SVNDEF) -O3 -DHAVE_FFTW -DFTYPE=float -Wall -Wsign-compare -Wpointer-arith
+CPPFLAGS = $(SVNDEF) -O3 -DHAVE_FFTW -DFTYPE=float -Wall -Wsign-compare -Wpointer-arith -std=c++14
 #CPPFLAGS = -g -DHAVE_FFTW -Wpointer-arith
 INTEL_CPPFLAGS = $(SVNDEF) -O3 -xT 
 

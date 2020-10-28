@@ -39,11 +39,11 @@ public:
   typedef _probability_prec                 probability_type;
   typedef string                            id_type;
   
-  static const base_type base_a       = 0;    ///< Constant for base A
-  static const base_type base_c       = 1;    ///< Constant for base C
-  static const base_type base_g       = 2;    ///< Constant for base G
-  static const base_type base_t       = 3;    ///< Constant for base T
-  const static size_t    base_count   = 4;    ///< Number of bases
+  constexpr static const base_type base_a       = 0;    ///< Constant for base A
+  constexpr static const base_type base_c       = 1;    ///< Constant for base C
+  constexpr static const base_type base_g       = 2;    ///< Constant for base G
+  constexpr static const base_type base_t       = 3;    ///< Constant for base T
+  constexpr const static size_t    base_count   = 4;    ///< Number of bases
   
   typedef vector<BaseProbability<probability_type> > probability_sequence_type;
 
